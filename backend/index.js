@@ -3,6 +3,7 @@ const app = express()
 const port = 5000
 const mongoDB = require("./db");
 const cors = require("cors");
+const serverless = require('serverless-http');
 
 app.use(cors({
   origin: "http://localhost:3000", // frontend
