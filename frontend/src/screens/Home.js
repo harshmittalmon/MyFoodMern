@@ -73,9 +73,9 @@ export default function Home() {
                       foodItem.filter((item) => (item.CategoryName === data.CategoryName ) && item.name.toLowerCase().includes(search.toLocaleLowerCase())).map(
                         filterItems => {
                           return <div key={filterItems._id} className='col-12 col-md-6 col-lg-3'> <Card
-                            foodName={filterItems.name}
+                            foodItems = {filterItems}
                             options={filterItems.options[0]}
-                            imgSrc={filterItems.img}
+                            
                           ></Card> </div>
                         }
                       ) : <div> No such Data found </div>
