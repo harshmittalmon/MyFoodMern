@@ -30,6 +30,12 @@ app.use(express.json());
 app.use("/api", require("./Routes/CreateUser"));
 app.use("/api", require("./Routes/DisplayData"));
 app.use("/api", require("./Routes/OrderData"));
+
+
+module.exports.handler = serverless(app);
+
+
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
