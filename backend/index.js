@@ -33,7 +33,7 @@ app.use("/api", require("./Routes/DisplayData"));
 app.use("/api", require("./Routes/OrderData"));
 
 
-module.exports.handler = serverless(app);
+module.exports = serverless(app);
 
 
 
