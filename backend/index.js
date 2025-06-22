@@ -3,12 +3,13 @@ const app = express()
 const port = 5000
 const mongoDB = require("./db");
 const cors = require("cors");
-const serverless = require('serverless-http');
 
 app.use(cors({
   origin: "http://localhost:3000", // frontend
   credentials: true // this line is required for cookies/localStorage access
 }));
+
+
 app.get("/", (req, res) => {
   res.send({
     active: true,
@@ -31,10 +32,6 @@ app.use(express.json());
 app.use("/api", require("./Routes/CreateUser"));
 app.use("/api", require("./Routes/DisplayData"));
 app.use("/api", require("./Routes/OrderData"));
-
-
-module.exports = serverless(app);
-
 
 
 app.listen(port, () => {
