@@ -4,12 +4,15 @@ const port = process.env.PORT || 5000;
 const mongoDB = require("./db");
 const cors = require("cors");
 
+const allowedOrigins = [
+  'http://localhost:3000', // local dev
+  'https://your-frontend.vercel.app', // ✅ update with your actual deployed frontend URL
+];
+
 app.use(cors({
-  origin: "http://localhost:3000", // frontend
-  credentials: true // this line is required for cookies/localStorage access
+  origin: allowedOrigins,
+  credentials: true
 }));
-
-
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
