@@ -1,5 +1,6 @@
 import React from 'react'
 // import Delete from '@material-ui/icons/Delete'
+import BASE_URL from '../config';
 import { useCart, useDispatchCart } from '../components/ContextReducer';
 export default function Cart() {
   let data = useCart();
@@ -21,9 +22,8 @@ export default function Cart() {
     let userEmail = localStorage.getItem("userEmail");
     console.log(userEmail);
     // console.log(data,localStorage.getItem("userEmail"),new Date());
-    let response = await fetch("http://localhost:5000/api/OrderData", {
+    let response = await fetch(`${BASE_URL}/api/OrderData`, {
       credentials: 'include',
-      Origin:"http://localhost:3000/login",
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import { Link,useNavigate } from 'react-router-dom'
-
+import BASE_URL from '../config';
 export default function Login() {
   const [credentials, setCredentials] = useState({ email: "", address: "" });
   let navigate = useNavigate();
   async function handleSubmit(e) {
     e.preventDefault();
-    const response = await fetch("http://localhost:5000/api/loginuser", {
+    const response = await fetch(`${BASE_URL}/api/loginuser`, {
       method: "POST",
       headers: {
         'Content-Type': 'application/json'

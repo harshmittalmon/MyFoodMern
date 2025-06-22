@@ -6,6 +6,7 @@ import burger from '../assets/burger.jpg'
 import chowmein from '../assets/chowmein.jpg'
 import pizza from '../assets/pizza.jpg'
 import Carousel from '../components/Carousel'
+import BASE_URL from '../config'
 
 export default function Home() {
   const [foodCat, setFoodCat] = useState([]);
@@ -13,7 +14,7 @@ export default function Home() {
   const [search,setSearch] = useState("");
 
   const loadData = async () => {
-    let response = await fetch("http://localhost:5000/api/foodData", {
+    let response = await fetch(`${BASE_URL}/api/foodData`, {
       method: "POST",
       headers: {
         'Content-Type': 'application/json'
