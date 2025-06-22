@@ -5,8 +5,8 @@ const mongoDB = require("./db");
 const cors = require("cors");
 
 const allowedOrigins = [
-  'http://localhost:3000', // local dev
-  'https://your-frontend.vercel.app', // ✅ update with your actual deployed frontend URL
+  'http://localhost:3000', 
+  'https://foodzania-mern.vercel.app', 
 ];
 
 app.use(cors({
